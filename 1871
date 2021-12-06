@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <stdlib.h> 
+
+int main() {
+  int x, y, resul, j;
+  char * conta = (char *) malloc(sizeof(char) * 11);
+  while (1) {
+    scanf("%i %i ", &x, &y);
+    if (x == 0 && y == 0) exit(0);
+    resul = x + y;
+    snprintf(conta, 11, "%d", resul);
+    j = 0;
+    while (conta[j] != '\0') {
+      if (conta[j] != '0')
+        printf("%c", conta[j]);
+        j++;
+    }
+    printf("\n");
+}
+  return 0;
+}
