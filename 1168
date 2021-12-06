@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+int main() {
+  int n, teste, j, i;
+  char num[101];
+  scanf("%i", &n);
+  for (i = 0; i < n; i++) {
+    scanf("%s", num);
+    j = 0;
+    teste = 0;
+    while ('1') {
+      if(num[j] == '\0') break;
+      if(num[j] == '1') teste += 2;
+      if(num[j] == '2') teste += 5;
+      if(num[j] == '3') teste += 5;
+      if(num[j] == '4') teste += 4;
+      if(num[j] == '5') teste += 5;
+      if(num[j] == '6') teste += 6;
+      if(num[j] == '7') teste += 3;
+      if(num[j] == '8') teste += 7;
+      if(num[j] == '9') teste += 6;
+      if(num[j] == '0') teste += 6;
+      j++;
+    }
+    printf("%i leds\n", teste);
+  }
+    return 0;
+}
