@@ -1,0 +1,11 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+	int A, B, C, Maior;
+	scanf("%d %d %d", &A, &B, &C);
+	Maior =(A + B + abs(A - B)) / 2;
+	Maior=(C + Maior + abs(Maior - C)) / 2;
+	printf("%d eh o maior\n", Maior);
+return 0;
+}
