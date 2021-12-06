@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <string.h>
+#define MAX 55
+
+int main() {
+  int tam, i, j, x = 1;
+  char car[MAX], linha[MAX];
+  scanf("%s", linha);
+
+  for (i = 0, j = 0; i < strlen(linha); i++){
+    if(linha[i] == 'a' || linha[i] == 'e' || linha[i] == 'i' || linha[i] == 'o' || linha[i] == 'u') {
+        car[j]= linha[i];
+        j++; }
+    }
+  tam = j;
+  for (i = 0; i < tam / 2; i++, j--){
+    if (car[i] != car[j - 1]){
+      x = 0;
+      break;}
+}
+  printf("%c\n", (!x? 'N' : 'S'));
+    return 0;
+}
