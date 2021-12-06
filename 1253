@@ -1,0 +1,25 @@
+#include <stdio.h>
+#define MAX 50
+
+int main(){
+  int N, C;
+  char pal[MAX];
+  scanf("%d",&N);
+  int i;
+  for(i = 0; i < N; i++){
+    scanf("%s",pal);
+    scanf("%d",&C);
+    int j;
+    for(j = 0; j < 50; j++){
+      if(pal[j] == '\0') 
+      { break; }
+      else
+        if((pal[j] - C) < 65)
+          { printf("%c", (pal[j] - C)+ 26); }
+        else
+          { printf("%c", (pal[j] - C)); }
+    }
+    printf("\n");       
+  }
+    return 0;
+}
