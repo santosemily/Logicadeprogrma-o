@@ -1,0 +1,25 @@
+int main() {
+	int w, wf, x, xf, y, yf, z, zf;
+	scanf("Dia %d", &w);
+	scanf("%d : %d : %d\n", &x, &y, &z);
+	scanf("Dia %d", &wf);
+	scanf("%d : %d : %d", &xf, &yf, &zf);
+	w = wf - w;
+	x = xf - x;
+	y = yf - y;
+	z = zf - z;
+	if (z < 0){
+		z += 60;
+		y--;}
+	if (y < 0){
+		y += 60;
+		x--;}
+	if (x < 0){
+		x += 24;
+		w--;}
+	printf("%d dia(s)\n", w);
+	printf("%d hora(s)\n", x);
+	printf("%d minuto(s)\n", y);
+	printf("%d segundo(s)\n", z);
+	return 0;
+}
