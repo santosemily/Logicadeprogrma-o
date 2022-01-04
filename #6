@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+void imprime (int **mat)
+  {
+    int i, j;
+    for (i = 0; i < 9; i++)
+      {
+        for (j = 0; j < 9; j++)
+          {
+            printf("%d\n", mat[i][j]);
+          }
+      }
+  return;
+  }
+void preenche (int ** mat)
+{
+  int i, j;
+  for (i = 0; i < 9; i++)
+  {
+    for (j = 0; j < 9; j++)
+      {
+         mat[i][j] = 1;
+      }
+  }
+}
+int main() {
+  int i;
+  int ** mat2;
+  mat2 = (int **)malloc( 9 * sizeof(int *));
+  for (i = 0; i < 9; i++)
+    { 
+      mat2[i] = (int *)malloc (9 * sizeof(int));
+    }
+  preenche(mat2);
+  imprime(mat2);
+  return 0;
+}
