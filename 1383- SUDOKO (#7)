@@ -1,0 +1,66 @@
+#include <stdio.h>
+#define TAM 9
+/* para zerar o digito */
+void digito (int * dig) {
+  int i;
+  for (i = 0; i < TAM; i++){
+    dig[i] = 0;}
+}
+/* para validar */
+int validar (int k[TAM][TAM], int x, int * dig) {
+  int i, j;
+  for (i = 0; i < TAM; i++) {
+    for (j = 0; j < TAM; j++) {
+      if (x) {
+        dig[k[i][j]]++;
+        if (dig[k[i][j]] > 1){
+          return 1;}
+      }
+      else {
+        dig[k[j][i]]++;
+        if (dig[k[j][i]] > 1){
+          return 1;}
+      }
+    }
+  digito(dig);
+  }
+    return 0;
+}
+
+int validamatriz (int k[TAM][TAM], int num1, int final, int num2, int final2, int * dig) {
+  int i, j;
+  for (i = num1; i < final; i++) {
+    for (j = num2; j < final2; j++) {
+      dig[k[j][i]]++;
+      if (dig[k[j][i]] > 1){
+        return 1;}
+    }
+  }
+  digito(dig);
+    return 0;
+}
+
+int main() {
+  int n, k[TAM][TAM], inv, num[TAM], casos, i, j;
+  scanf("%i", &n);
+  for (casos = 1; casos <= n; casos++) {
+    for (i = 0; i < TAM; i++) {
+      digito(num);
+      for (j = 0; j < TAM; j++) {
+        scanf("%i", &k[i][j]);
+        k[i][j]--;
+      }
+    }
+    inv = validar(k, 1, num) + validar(k, 0, num);
+    for (i = 0; i < TAM; i += 3)
+      for (j = 0; j < TAM; j += 3)
+        inv += validamatriz(k, i, i + 3, j, j + 3, num);
+    printf("Instancia %i\n", casos);
+    if (inv){
+      printf("NAO\n\n");}
+    else{
+      printf("SIM\n\n");}
+  }
+    return 0;
+}
+  
