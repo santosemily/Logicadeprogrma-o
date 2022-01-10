@@ -36,3 +36,44 @@ int main() {
   imprime(mat2);
   return 0;
 }
+ou 
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+void imprime (int ** mat)
+  {
+    int i, j;
+    for (i = 0; i < 9; i++)
+      {
+        for (j = 0; j < 9; j++)
+          {
+            printf("%d\n", mat[i][j]);
+          }
+      }
+  return;
+  }
+void preenche (int ** mat)
+{
+  srand(time(0));
+  int i, j;
+  for (i = 0; i < 9; i++)
+  {
+    for (j = 0; j < 9; j++)
+      {
+         mat[i][j] = rand()%100;
+      }
+  }
+}
+int main() {
+  int i;
+  int ** mat;
+  mat = (int **)malloc( 9 * sizeof(int *));
+  for (i = 0; i < 9; i++)
+    { 
+      mat[i] = (int *)malloc (9 * sizeof(int));
+    }
+  preenche(mat);
+  imprime(mat);
+  return 0;
+}
