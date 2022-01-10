@@ -4,10 +4,10 @@ int main()
 {
 	int tempo, vm;
 	double litros, km;
-    scanf("%d %d", &tempo, &vm);
+    	scanf("%d %d", &tempo, &vm);
 	km = (tempo * vm);
 	litros = km / 12;
-    printf("%.3lf\n", litros);
+    	printf("%.3lf\n", litros);
     return 0;
 }
   
