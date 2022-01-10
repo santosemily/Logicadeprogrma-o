@@ -3,8 +3,8 @@
 int main()
 {
 	int hora, min;
-    scanf("%d", &hora);
+    	scanf("%d", &hora);
 	min = hora * 2;
-    printf("%d minutos\n", min);
+    	printf("%d minutos\n", min);
     return 0;
 }
