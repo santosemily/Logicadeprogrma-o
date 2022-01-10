@@ -4,8 +4,8 @@ int main() {
 	int X;
 	scanf("%d", &X);
 	if (X == 1){
-       printf("January\n");}
-    else{
+       		printf("January\n");}
+    	else{
 		if (X == 2){
 			printf("February\n");}
 		if (X == 3){
@@ -27,7 +27,7 @@ int main() {
 		if (X == 11){
 			printf("November\n");}
 		if (X == 12){
-          printf("December\n");}
+          		printf("December\n");}
 		}
 	return 0;
 }
