@@ -10,15 +10,13 @@ int main()
     scanf("%s %s", pal1, pal2);
     x1 = strlen(pal1);
     x2 = strlen(pal2);
-    for (j = 0, k = 0; j < x1 && j < x2; ++j, k += 2)
-{
+    for (j = 0, k = 0; j < x1 && j < x2; ++j, k += 2){
       palfinal[k] = pal1[j];
       palfinal[k + 1] = pal2[j]; }
     for (; j < x1; ++j, ++k)
       palfinal[k] = pal1[j];
     for (; j < x2; ++j, ++k)
       palfinal[k] = pal2[j];
-
         palfinal[k] = '\0';
         puts(palfinal);
     }
