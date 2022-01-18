@@ -1,0 +1,14 @@
+#include <stdio.h>
+#define MAX 10
+int main()
+{
+  int n[MAX], i, x;
+  scanf("%d", &x);
+  for(i = 0; i <= 9; i++)
+  {
+    n[i] = x;
+    printf("N[%d] = %d\n", i, x);
+    x *= 2;
+  }
+    return 0;
+}
