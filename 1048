@@ -1,0 +1,37 @@
+#include <stdio.h>
+int main()
+{
+  float salario, salarionovo, reajuste;
+  scanf("%f", &salario);
+  if (salario <= 400.0){
+    salarionovo = salario * 1.15;
+    reajuste = salarionovo - salario;
+    printf("Novo salario: %.2f\nReajuste ganho: %.2f\nEm percentual: 15 %%\n", salarionovo, reajuste);
+  }
+  else
+    if (salario <= 800.0){
+      salarionovo = salario * 1.12;
+      reajuste = salarionovo - salario;
+      printf("Novo salario: %.2f\nReajuste ganho: %.2f\nEm percentual: 12 %%\n", salarionovo, reajuste);
+    }
+      else
+        if (salario <= 1200.0){
+          salarionovo = salario * 1.10;
+          reajuste = salarionovo - salario;
+          printf("Novo salario: %.2f\nReajuste ganho: %.2f\nEm percentual: 10 %%\n", salarionovo, reajuste);
+        }
+        else 
+          if (salario <= 2000.0){
+            salarionovo = salario * 1.07;
+            reajuste = salarionovo - salario;
+            printf("Novo salario: %.2f\nReajuste ganho: %.2f\nEm percentual: 7 %%\n", salarionovo, reajuste);
+          }
+          else {
+            salarionovo = salario * 1.04;
+            reajuste = salarionovo - salario;
+            printf("Novo salario: %.2f\nReajuste ganho: %.2f\nEm percentual: 4 %%\n", salarionovo, reajuste);
+          }
+  return 0;
+}
+
+  
