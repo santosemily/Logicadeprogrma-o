@@ -43,6 +43,7 @@ int validamatriz (int k[TAM][TAM], int num1, int final, int num2, int final2, in
 int main() {
   int n, k[TAM][TAM], inv, num[TAM], casos, i, j;
   scanf("%i", &n);
+  int results[n];
   for (casos = 1; casos <= n; casos++) {
     for (i = 0; i < TAM; i++) {
       digito(num);
@@ -52,14 +53,27 @@ int main() {
       }
     }
     inv = validar(k, 1, num) + validar(k, 0, num);
-    for (i = 0; i < TAM; i += 3)
-      for (j = 0; j < TAM; j += 3)
+    for (i = 0; i < TAM; i += 3){
+      for (j = 0; j < TAM; j += 3) {
         inv += validamatriz(k, i, i + 3, j, j + 3, num);
-    printf("Instancia %i\n", casos);
+      }
+    }
     if (inv){
-      printf("NAO\n\n");}
+        results[casos - 1] = 0;
+    }
     else{
-      printf("SIM\n\n");}
+        results[casos - 1] = 1;
+    }
+  }
+
+  for(i = 0; i < n; i++) {
+      printf("Instancia %i\n", i + 1);
+      if(results[i] == 0) {
+          printf("NAO\n\n");
+      }
+      else {
+          printf("SIM\n\n");
+      }
   }
     return 0;
 }
