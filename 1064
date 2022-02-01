@@ -1,0 +1,24 @@
+/* quant de positivos e media deles */
+#include <stdio.h>
+
+int main() {
+    float  num, valor, media;
+    int cont, positivos;
+    positivos = 0;
+    valor = 0;
+    media = 0;
+    for (cont = 1; cont <= 6; cont++)
+    {
+        scanf("%f", &num);
+        if (num > 0)
+        {
+            positivos += 1;
+            valor += num;
+        }
+    }
+    media = valor / positivos;
+    printf("%d valores positivos\n", positivos);
+    printf("%.1f\n", media);
+    
+    return 0;
+}
