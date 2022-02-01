@@ -1,0 +1,16 @@
+/* quant de numeros pares */
+#include <stdio.h>
+
+int main() {
+    int num, cont, par;
+    par = 0;
+    for (cont = 1; cont <= 5; cont++)
+    {
+        scanf("%d", &num);
+        if (num % 2 == 0)
+        par++;
+    }
+    printf("%d valores pares\n", par);
+
+    return 0;
+}
