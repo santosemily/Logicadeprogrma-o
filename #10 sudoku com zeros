@@ -1,0 +1,101 @@
+#include <stdlib.h>
+#include <stdio.h>
+
+int main()
+{   
+  int numl, numc, lgrade, cgrade, mat, nummat, inssol, i; 
+  int matriz[9][9], quant[11]; 
+  scanf("%d", &nummat);
+
+    for(mat = 0; mat < nummat; mat++)
+    {
+        inssol = 1; //instancia como solucao
+        //conferindo as linhas
+        for (numl = 0; numl < 9; numl++)
+        {
+          for (numc = 0; numc < 9; numc++)
+          {
+            scanf("%d", &matriz[numl][numc]);
+          }
+        }
+        for (numl = 0; numl < 9; numl++) 
+        {
+          for (i = 1; i < 11; i++)
+          {
+            quant[i] = 0;
+          }
+          for (numc = 0; numc < 9; numc++)
+          { 
+            if(matriz[numl][numc] < 0||matriz[numl][numc] > 9)
+            {
+                inssol = 0;
+                break;
+            }
+            if (matriz[numl][numc] != 0)
+            {
+                quant[matriz[numl][numc]] += 1;
+                if(quant[matriz[numl][numc]] > 1 && matriz[numl][numc] != 0)
+                {
+                    inssol = 0;
+                    break; 
+                }
+            }
+          }
+       }
+      //conferindo as colunas
+      for (numc = 0; numc < 9 && inssol != 0; numc++)
+      {
+        for (i = 0; i < 11; i++)
+        {
+          quant[i] = 0;
+          break;
+        }
+        for (numl = 0; numl < 9 && inssol != 0; numl++)
+        {
+          quant[matriz[numl][numc]] += 1;
+          if(quant[matriz[numl][numc]] > 1)
+          {
+            inssol = 0;
+            break; 
+          }
+        }
+      }
+      //mini matrizes
+      for ( lgrade = 0; lgrade < 3; lgrade++)
+      {
+        for ( cgrade = 0; cgrade < 3; cgrade++)
+      {
+        for (i = 1; i < 11; i++)
+        {
+          quant[i] = 0; 
+        }
+        for ( numl = 0; numl < 3; numl++)
+        {
+          for ( numc = 0; numc < 3; numc++)
+          {
+            quant[matriz[lgrade * 3 + numl][cgrade * 3 + numc]] += 1;
+            if(quant[matriz[lgrade * 3 + numl][cgrade * 3 + numc]] > 1)
+            {
+              inssol = 0;
+              break;
+            }
+          }
+
+        }
+      }
+    }
+    //Imprimir:
+    printf("Instancia %d\n", mat + 1);
+    if (inssol == 1)
+    {
+      printf("SIM\n");
+    }
+    else
+    {
+      printf("NAO\n");
+    }
+    printf("\n"); 
+  }
+
+    return 0;
+}
