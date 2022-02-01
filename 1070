@@ -1,0 +1,20 @@
+/* numeros impares consecutivos do x */
+#include <stdio.h>
+
+int main()
+{
+    int i, x;
+    i = 0;
+    scanf("%i", &x);
+    if (x % 2 == 0)
+    {
+        x++;
+    }
+    while (i < 6)
+    {
+        printf("%i\n", x);
+        i++;
+        x += 2;
+    }
+    return 0;
+}
